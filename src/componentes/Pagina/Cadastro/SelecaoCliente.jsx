@@ -3,10 +3,16 @@ import { Tipografia } from "../../Tipografia.jsx/Tipografia";
 import cliente from "./Assets/cliente.png";
 import freela from "./Assets/freela.png";
 import { Link } from "../../Link";
+import { Link as LinkRouter } from "react-router-dom";
+import { useCadastroUsuarioContext } from "../../../Contexto/CadastroUsuario";
+
 
 const SelecaoCliente = () => {
+
+  const { setPerfil } = useCadastroUsuarioContext()
+
   return (
-    <>
+    <div style={{textAlign: "center"}}>
       <Tipografia variante="h1" componente="h1">
         Crie seu cadastro
       </Tipografia>
@@ -15,13 +21,12 @@ const SelecaoCliente = () => {
       </Tipografia>
       <Row>
         <Col md={6} sm={12}>
-          <img
-            src={cliente}
-            alt="Foto que representa a empresa que busca freelancers"
-          />
+        <LinkRouter to='interesses' onClick={() => setPerfil('cliente')}>
+          <img src={cliente} alt="Foto que representa a empresa que busca freelancers"/>
           <Tipografia variante="body" componente="body">
             Sou cliente e preciso de um freela!
-          </Tipografia>
+        </Tipografia>
+        </LinkRouter>
         </Col>
         <Col md={6} sm={12}>
           <img
@@ -33,7 +38,7 @@ const SelecaoCliente = () => {
           </Tipografia>
         </Col>
       </Row>
-      <div style={{textAlign: "center"}}>
+      <div>
         <Tipografia variante="body2" componente="body2">
           Já tem conta?
         </Tipografia>
@@ -41,7 +46,7 @@ const SelecaoCliente = () => {
           <Link variante="secundaria">Faça login</Link>
         </p>
       </div>
-    </>
+    </div>
   );
 };
 
