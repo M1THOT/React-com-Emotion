@@ -14,3 +14,4 @@ const estilos = tema => {
 export const Estilos = () => {
   return <Global styles={estilos} />;
 };
+
