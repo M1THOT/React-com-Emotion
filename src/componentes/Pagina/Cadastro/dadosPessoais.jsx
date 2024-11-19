@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Botao } from "../../Botao/Botao";
 import { CampoTexto } from "../../CampoTexto/CampoTexto";
 import { ListaSupensa } from "../../ListaSuspensa/ListaSuspensa";
-import { useCadastroUsuarioContext } from "../../../Contexto/CadastroUsuario";
+import { useCadastroUsuarioContext } from "../../../Contexto/Contexto";
 
 const estadosBrasileiros = [
   { text: "Acre", value: "AC" },

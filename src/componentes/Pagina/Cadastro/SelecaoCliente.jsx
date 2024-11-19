@@ -21,7 +21,7 @@ const SelecaoCliente = () => {
       </Tipografia>
       <Row>
         <Col md={6} sm={12}>
-        <LinkRouter to='interesses' onClick={() => setPerfil('cliente')}>
+        <LinkRouter to="interesses" onClick={() => setPerfil('cliente')}>
           <img src={cliente} alt="Foto que representa a empresa que busca freelancers"/>
           <Tipografia variante="body" componente="body">
             Sou cliente e preciso de um freela!
@@ -33,9 +33,11 @@ const SelecaoCliente = () => {
             src={freela}
             alt="Foto que representa o freelancer que busca clientes"
           />
+        <LinkRouter to="/cadastro/interesses" onClick={() => setPerfil('cliente')}>
           <Tipografia variante="body" componente="body">
             Sou um freela e preciso de cliente!
-          </Tipografia>
+        </Tipografia>
+        </LinkRouter>
         </Col>
       </Row>
       <div>

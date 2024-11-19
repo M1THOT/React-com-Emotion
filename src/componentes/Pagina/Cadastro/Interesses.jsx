@@ -1,7 +1,7 @@
 import { Tipografia } from "../../Tipografia.jsx/Tipografia"
 import GrupoRadio from "../../Radio/GrupoRadio"
 import { Col, Row } from "react-grid-system"
-import { Link, Navigate, useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { Botao } from "../../Botao/Botao"
 import { useCadastroUsuarioContext } from "../../../Contexto/CadastroUsuario"
 import { useEffect } from "react"
@@ -40,7 +40,7 @@ const Interesses = () => {
     const navegar = useNavigate()
 
     useEffect(() => {
-        if (!possoSelecionarInteresse()) {
+        if (possoSelecionarInteresse()) {
             navegar('/cadastro')
         }
     }, [navegar , possoSelecionarInteresse])

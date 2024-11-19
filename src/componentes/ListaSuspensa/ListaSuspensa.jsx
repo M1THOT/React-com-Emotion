@@ -1,7 +1,7 @@
 import styled from "@emotion/styled"
 import { useState } from "react"
 import { ItemListaSuspensaEstilizado } from "./ItemListaSuspensaEstilizado"
-import { ListaSuspensaEstilizado } from "./ListaSuspensaEstilizado"
+import { ListaSuspensaEstilizada } from "./ListaSuspensaEstilizada"
 
 const LabelEstilizada = styled.label`
     display: block;
@@ -38,7 +38,7 @@ const BotaoEstilizado = styled.button`
     }
 `
 
-export const ListaSupensa = ({ titulo, opcoes, valor, onChange }) => {
+export const ListaSupensa = ({ titulo, opcoes, valor, onChange}) => {
     const [estaAberta, alternarVisibilidade] = useState(false)
 
     const [opcaoFocada, setOpcaoFocada] = useState(null);
@@ -102,7 +102,7 @@ export const ListaSupensa = ({ titulo, opcoes, valor, onChange }) => {
                 <span>{estaAberta ? '▲' : '▼'}</span>
             </div>
         </BotaoEstilizado>
-        {estaAberta && <ListaSuspensaEstilizado>
+        {estaAberta && <ListaSuspensaEstilizada>
             {opcoes.map((opcao, index) => <ItemListaSuspensaEstilizado
                 key={opcao.value}
                 focoAtivo={index === opcaoFocada}
@@ -110,6 +110,6 @@ export const ListaSupensa = ({ titulo, opcoes, valor, onChange }) => {
                 >
                 {opcao.text}
             </ItemListaSuspensaEstilizado>)}
-        </ListaSuspensaEstilizado>}
+        </ListaSuspensaEstilizada>}
     </LabelEstilizada>)
 }

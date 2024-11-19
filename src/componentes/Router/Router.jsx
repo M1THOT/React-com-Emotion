@@ -7,25 +7,32 @@ import DadosPessoais from "../Pagina/Cadastro/dadosPessoais";
 import Concluido from "../Pagina/Cadastro/concluido";
 
 export const Router = createBrowserRouter([
-    {
-      path: "/",
-      element: <LayoutBase />,
-      children: [{
+  {
+    path: "/",
+    element: <LayoutBase />,
+    children: [
+      {
         path: "cadastro",
         element: <LayoutBaseCadastro />,
-        children: [{
-          path:'',
-          element: <SelecaoCliente />,
-        },{
-          path: "Interesses",
-          element: <Interesses />,
-        },{
-          path: "dados-pessoais",
-          element: <DadosPessoais />,
-        },{
-          path: "concluido",
-          element: <Concluido />,
-        }]
-      }],
-    },
-  ]);
+        children: [
+          {
+            path: "",
+            element: <SelecaoCliente />,
+          },
+          {
+            path: "interesses",
+            element: <Interesses />,
+          },
+          {
+            path: "dados-pessoais",
+            element: <DadosPessoais />,
+          },
+          {
+            path: "concluido",
+            element: <Concluido />,
+          },
+        ],
+      },
+    ],
+  },
+]);
